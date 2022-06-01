@@ -6,12 +6,12 @@ After=syslog.target network.target nss-lookup.target network-online.target
 [Service]
 Environment="LD_LIBRARY_PATH=./linux64"
 #ExecStartPre=steamcmd +force_install_dir "~/SatisfactoryDedicatedServer" +login 'anonymous' +app_update '1690800' 'validate' +quit
-ExecStart=~/SatisfactoryDedicatedServer/FactoryServer.sh
+ExecStart=/home/steam/SatisfactoryDedicatedServer/FactoryServer.sh
 User=steam
 Group=steam
 StandardOutput=journal
 #Restart=on-failure
-WorkingDirectory=~/SatisfactoryDedicatedServer/FactoryServer.sh
+WorkingDirectory=/home/steam/SatisfactoryDedicatedServer/FactoryServer.sh
 StandardOutput=append:/var/log/satisfactory.log
 StandardError=append:/var/log/satisfactory.err
 #RemainAfterExit=True
