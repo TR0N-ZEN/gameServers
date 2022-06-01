@@ -1,7 +1,7 @@
 #!/bin/bash
 
-$PREFIX="~/steamServerInstaller/Satisfactory"
-$INSTALL_TARGET="~/SatisfactoryDedicatedServer"
+PREFIX="~/steamServerInstaller/Satisfactory"
+INSTALL_TARGET="~/SatisfactoryDedicatedServer"
 
 sudo cp "$PREFIX/SatisfactoryDS.service" '/etc/systemd/system/' && \
 mkdir $INSTALL_TARGET && \
