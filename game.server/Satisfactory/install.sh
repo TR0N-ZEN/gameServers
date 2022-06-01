@@ -1,10 +1,10 @@
 #!/bin/bash
 
-PREFIX="~/steamServerInstaller/game.server/Satisfactory"
-INSTALL_TARGET="~/SatisfactoryDedicatedServer"
+PREFIX='steamServerInstaller/game.server/Satisfactory'
+INSTALL_TARGET='SatisfactoryDedicatedServer'
 
-sudo cp "$PREFIX/SatisfactoryDS.service" '/etc/systemd/system/' && \
-mkdir $INSTALL_TARGET && \
+sudo cp "~/$PREFIX/SatisfactoryDS.service" '/etc/systemd/system/' && \
+mkdir "~/$INSTALL_TARGET" && \
 # sudo cp "$PREFIX/start.sh" "~/SatisfactoryDedicatedServer/" && \
 # sudo chmod +x "~/SatisfactoryDedicatedServer/start.sh" && \
 sudo touch '/var/log/satisfactory.log' '/var/log/satisfactory.err' && \
