@@ -2,6 +2,7 @@
 Description=Trouble in Terrorist Town server
 
 [Service]
+Nice=-5
 #Type=forking #causes everything to fail when uncommented cause ExecStart times out because start.sh doesnt terminate as long as server runs
 ExecStart=/home/steam/GarrysModDS/start.sh
 #RemainAfterExit=True
