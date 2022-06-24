@@ -19,9 +19,9 @@ StandardOutput=append:/var/log/minecraft.log
 StandardError=append:/var/log/minecraft.err
 Restart=always
 # Environment="LD_LIBRARY_PATH=./linux64"
-WorkingDirectory=/home/minecraft
+WorkingDirectory=/opt/minecraft/vanilla
 #ExecStartPre=
-ExecStart=java -server -Xmx4G -Xms4G -jar forge-1.12.2-14.23.5.2854.jar nogui
+ExecStart=java -Xmx4G -Xms4G -jar /opt/minecraft/vanilla/server.jar nogui
 #RemainAfterExit=True
 
 [Install]
