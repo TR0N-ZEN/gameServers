@@ -5,16 +5,23 @@ After=syslog.target network.target nss-lookup.target network-online.target
 
 [Service]
 Nice=-10
-Environment="LD_LIBRARY_PATH=./linux64"
-#ExecStartPre=steamcmd +force_install_dir "home/steam/SatisfactoryDedicatedServer" +login 'anonymous' +app_update '1690800' 'validate' +quit
-ExecStart=/home/steam/SatisfactoryDedicatedServer/FactoryServer.sh
+#Type=forking
 User=steam
 Group=steam
+NoNewPrivileges=true
+# KillMode=none
+# SuccessExitStatus=0 1
+# ProtectHome=true
+# ProtectSystem=full
+# PrivateDevices=true
 StandardOutput=journal
-#Restart=on-failure
-WorkingDirectory=/home/steam/SatisfactoryDedicatedServer
 StandardOutput=append:/var/log/satisfactory.log
 StandardError=append:/var/log/satisfactory.err
+Restart=always
+Environment="LD_LIBRARY_PATH=./linux64"
+WorkingDirectory=/home/steam/SatisfactoryDedicatedServer
+#ExecStartPre=steamcmd +force_install_dir "home/steam/SatisfactoryDedicatedServer" +login 'anonymous' +app_update '1690800' 'validate' +quit
+ExecStart=/home/steam/SatisfactoryDedicatedServer/FactoryServer.sh
 #RemainAfterExit=True
 
 [Install]

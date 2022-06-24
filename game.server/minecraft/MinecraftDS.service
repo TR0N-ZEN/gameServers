@@ -1,25 +1,28 @@
 [Unit]
-Description=Minecraft Server: %i
+Description=Minecraft dedicated server: %i
+Wants=network-online.target
 After=syslog.target network.target nss-lookup.target network-online.target
 
 [Service]
-Nice=1
+Nice=-5
+#Type=forking
+User=minecraft
+Group=minecraft
+NoNewPrivileges=true
 # KillMode=none
 # SuccessExitStatus=0 1
 # ProtectHome=true
 # ProtectSystem=full
 # PrivateDevices=true
-NoNewPrivileges=true
-WorkingDirectory=/home/minecraft
-
-User=minecraft
-Group=minecraft
-
-Restart=always
 StandardOutput=journal
-StandardOutput=append:/var/log/satisfactory.log
-StandardError=append:/var/log/satisfactory.err
-ExecStart=java -Xmx4G -Xms4G -jar minecraft_server.jar nogui
+StandardOutput=append:/var/log/minecraft.log
+StandardError=append:/var/log/minecraft.err
+Restart=always
+# Environment="LD_LIBRARY_PATH=./linux64"
+WorkingDirectory=/home/minecraft
+#ExecStartPre=
+ExecStart=java -Xmx4G -Xms4G -jar /opt/minecraft/server.jar nogui
+#RemainAfterExit=True
 
 [Install]
-WantedBy=multi-user.target//
+WantedBy=multi-user.target
