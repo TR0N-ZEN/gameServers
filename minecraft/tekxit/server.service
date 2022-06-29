@@ -21,7 +21,8 @@ Restart=always
 # Environment="LD_LIBRARY_PATH=./linux64"
 WorkingDirectory=/opt/minecraft/tekxit/1.0.6TekxitPiServer
 #ExecStartPre=
-ExecStart=java -server -Xmx4G -Xms4G -jar /opt/minecraft/tekxit/1.0.6TekxitPiServer/forge-1.12.2-14.23.5.2854.jar nogui
+ExecStart=java -server -Xmx4g -Xms4g -jar /opt/minecraft/tekxit/1.0.6TekxitPiServer/forge-1.12.2-14.23.5.2854.jar nogui
+# ExecStart=java -server -Xmx6g -Xms6g -XX:ThreadStackSize=7m -jar /opt/minecraft/tekxit/1.0.6TekxitPiServer/forge-1.12.2-14.23.5.2854.jar nogui
 #RemainAfterExit=True
 
 [Install]

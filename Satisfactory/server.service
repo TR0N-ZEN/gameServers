@@ -1,5 +1,5 @@
 [Unit]
-Description=Satisfactory dedicated server
+Description=Satisfactory server
 Wants=network-online.target
 After=syslog.target network.target nss-lookup.target network-online.target
 
@@ -19,9 +19,9 @@ StandardOutput=append:/var/log/satisfactory.log
 StandardError=append:/var/log/satisfactory.err
 Restart=always
 Environment="LD_LIBRARY_PATH=./linux64"
-WorkingDirectory=/home/steam/SatisfactoryDedicatedServer
-#ExecStartPre=steamcmd +force_install_dir "home/steam/SatisfactoryDedicatedServer" +login 'anonymous' +app_update '1690800' 'validate' +quit
-ExecStart=/home/steam/SatisfactoryDedicatedServer/FactoryServer.sh
+WorkingDirectory=/home/steam/SatisfactoryServer
+#ExecStartPre=steamcmd +force_install_dir "home/steam/SatisfactoryServer" +login 'anonymous' +app_update '1690800' 'validate' +quit
+ExecStart=/home/steam/SatisfactoryServer/FactoryServer.sh
 #RemainAfterExit=True
 
 [Install]
