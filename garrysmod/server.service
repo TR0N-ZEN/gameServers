@@ -1,5 +1,5 @@
 [Unit]
-Description=Trouble in Terrorist Town server
+Description=ttt server
 Wants=network-online.target
 After=syslog.target network.target nss-lookup.target network-online.target
 
@@ -19,9 +19,9 @@ StandardOutput=append:/var/log/garrysmod.log
 StandardError=append:/var/log/garrysmod.err
 Restart=always
 # Environment="LD_LIBRARY_PATH=./linux64"
-WorkingDirectory=/home/steam/GarrysModDS
+WorkingDirectory=/home/steam/garrysmod
 #ExecStartPre=
-ExecStart=/home/steam/GarrysModDS/srcds_run -console -game 'garrysmod' +gamemode 'terrortown' +sv_setsteamaccount '<x>' +host_workshop_collection '1526838171' +maxplayers '12' +map 'ttt_metropolis'
+ExecStart=/home/steam/garrysmod/srcds_run -console -game 'garrysmod' +gamemode 'terrortown' +sv_setsteamaccount '<x>' +host_workshop_collection '1526838171' +maxplayers '12' +map 'ttt_metropolis'
 #RemainAfterExit=True
 
 [Install]

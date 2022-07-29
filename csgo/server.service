@@ -1,0 +1,29 @@
+[Unit]
+Description=csgo server
+Wants=network-online.target
+After=syslog.target network.target nss-lookup.target network-online.target
+
+[Service]
+Nice=-5
+#Type=forking #causes everything to fail when uncommented cause ExecStart times out because start.sh doesnt terminate as long as server runs
+User=steam
+Group=steam
+NoNewPrivileges=true
+# KillMode=none
+# SuccessExitStatus=0 1
+# ProtectHome=true
+# ProtectSystem=full
+# PrivateDevices=true
+StandardOutput=journal
+StandardOutput=append:/var/log/csgo.server.log
+StandardError=append:/var/log/csgo.server.err
+Restart=always
+# Environment="LD_LIBRARY_PATH=./linux64"
+WorkingDirectory=/home/steam/csgo
+#ExecStartPre=
+ExecStart=/home/steam/csgo/srcds_run srcds -game csgo -console -usercon +game_type 1 +game_mode 2 +mapgroup mg_allclassic +map de_dust
+ +sv_setsteamaccount '<x>'
+#RemainAfterExit=True
+
+[Install]
+WantedBy=multi-user.target

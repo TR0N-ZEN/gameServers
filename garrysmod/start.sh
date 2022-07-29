@@ -1,5 +1,5 @@
 #!/bin/bash
-. ~/GarrysModDS/srcds_run \
+. home/steam/garrysmod/srcds_run \
   -console \
   -game 'garrysmod' \
   +gamemode 'terrortown' \
