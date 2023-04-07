@@ -5,7 +5,7 @@ After=syslog.target network.target nss-lookup.target network-online.target
 
 [Service]
 Nice=-5
-#Type=forking #causes everything to fail when uncommented cause ExecStart times out because start.sh doesnt terminate as long as server runs
+#Type=forking #causes everything to fail when uncommented cause ExecStart times out because start.sh doesn't terminate as long as server runs
 User=steam
 Group=steam
 NoNewPrivileges=true
