@@ -5,12 +5,13 @@
 ---
 
 
-install: `steamcmd +force_install_dir ~/SatisfactoryDedicatedServer +login 'anonymous' +app_update '1690800' 'validate' +quit`
+install: `steamcmd +login 'anonymous' +app_update '1690800' 'validate' +quit`
 
-server: `~/SatisfactoryDedicatedServer/FactoryServer.sh`
+to start server: `FactoryServer.sh`
 
 savegame folder: `~/.config/Epic/FactoryGame/Saved/SaveGames/server`
 
 ---
 
 ## encountered errors
+

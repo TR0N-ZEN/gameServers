@@ -17,11 +17,11 @@ NoNewPrivileges=true
 StandardOutput=journal
 StandardOutput=append:/var/log/satisfactory.log
 StandardError=append:/var/log/satisfactory.err
-Restart=always
+# Restart=always
 Environment="LD_LIBRARY_PATH=./linux64"
-WorkingDirectory=/home/steam/satisfactory
-#ExecStartPre=steamcmd +force_install_dir "home/steam/satisfactory" +login 'anonymous' +app_update '1690800' 'validate' +quit
-ExecStart=/home/steam/satisfactory/FactoryServer.sh
+#WorkingDirectory=/home/steam/Steam/steamapps/common/SatisfactoryDedicatedServer
+#ExecStartPre=steamcmd +login 'anonymous' +app_update '1690800' 'validate' +quit
+ExecStart=FactoryServer.sh
 #RemainAfterExit=True
 
 [Install]
