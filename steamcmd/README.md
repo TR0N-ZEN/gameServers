@@ -13,7 +13,7 @@ To install it execute install.sh.
 
 `steamcmd` is used to install games and game servers identified by their _appid_ like so:
 ```
-steamcmd +force_install_dir <install_directory> +login 'anonymous' +app_update '<app-id>' 'validate' +quit
+steamcmd +login 'anonymous' +app_update '<app-id>' 'validate' +quit
 ```
 
 
@@ -26,3 +26,4 @@ steamcmd +force_install_dir <install_directory> +login 'anonymous' +app_update '
 | -          | -                             |
 
 Search @https://steamdb.info/apps/ for `<app-id>`
+
