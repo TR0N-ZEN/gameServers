@@ -3,9 +3,8 @@
 
 ---
 
-+ install: `steamcmd +force_install_dir '~/GarrysModDS' +login 'anonymous' +app_update '4020' 'validate' +quit`
-+ start game server: `~/GarrysModDS/srcds_run -console -game 'garrysmod' +gamemode 'terrortown' +sv_setsteamaccount '<your token>' +host_workshop_collection 
-  '<collectionID>' +maxplayers '12' +map 'gm_flatgrass'`
++ install: `steamcmd +login 'anonymous' +app_update '4020' 'validate' +quit`
++ start game server: `srcds_run -console -game 'garrysmod' +gamemode 'terrortown' +sv_setsteamaccount '<your token>' +host_workshop_collection '<collectionID>' +maxplayers '12' +map 'gm_flatgrass'`
   + where `<collectionID>` can be '1526838171' for [*Blizzards TTT*](https://steamcommunity.com/sharedfiles/filedetails/?id=1526838171)
 
 ---

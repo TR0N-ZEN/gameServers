@@ -5,7 +5,7 @@ After=syslog.target network.target nss-lookup.target network-online.target
 
 [Service]
 Nice=-5
-#Type=forking #causes everything to fail when uncommented cause ExecStart times out because start.sh doesn't terminate as long as server runs
+#Type=oneshot
 User=steam
 Group=steam
 NoNewPrivileges=true
@@ -17,12 +17,11 @@ NoNewPrivileges=true
 StandardOutput=journal
 StandardOutput=append:/var/log/garrysmod.log
 StandardError=append:/var/log/garrysmod.err
-Restart=always
-# Environment="LD_LIBRARY_PATH=./linux64"
-WorkingDirectory=/home/steam/garrysmod
-#ExecStartPre=
-ExecStart=/home/steam/garrysmod/srcds_run -console -game 'garrysmod' +gamemode 'terrortown' +sv_setsteamaccount '<x>' +host_workshop_collection '1526838171' +maxplayers '12' +map 'ttt_metropolis'
-#RemainAfterExit=True
+Restart=no
+Environment="LD_LIBRARY_PATH=/home/steam/Steam/steamapps/common/GarrysModDS/linux64"
+WorkingDirectory=/home/steam/Steam/steamapps/common/GarrysModDS
+ExecStart=/home/steam/Steam/steamapps/common/GarrysModDS/srcds_run -console -game 'garrysmod' +gamemode 'terrortown' +sv_setsteamaccount '<x>' +host_workshop_collection '1526838171' +maxplayers '12' +map 'ttt_metropolis' -tickrate 128
 
 [Install]
 WantedBy=multi-user.target
+
