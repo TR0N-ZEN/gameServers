@@ -17,3 +17,5 @@ echo 'Remember to replace <x> inside "/etc/systemd/system/garrysmod.server.servi
 sudo nano /etc/systemd/system/garrysmod.server.service 
 sudo systemctl daemon-reload
 
+sed -n -E 's/^[[:space:]]*("[[:digit:]]{10}")[[:space:]]*$/resource.AddWorkshop(\1)/p' /home/steam/Steam/steamapps/common/GarrysModDS/steam_cache/appworkshop_4000.acf > /home/steam/Steam/steamapps/common/GarrysModDS/garrysmod/lua/autorun/server/workshop.lua
+

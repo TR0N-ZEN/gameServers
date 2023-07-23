@@ -19,10 +19,10 @@ StandardOutput=append:/var/log/csgo.server.log
 StandardError=append:/var/log/csgo.server.err
 Restart=always
 # Environment="LD_LIBRARY_PATH=./linux64"
-WorkingDirectory=/home/steam/csgo
+WorkingDirectory='/home/steam/Steam/steamapps/common/Counter-Strike Global Offensive Beta - Dedicated Server'
 #ExecStartPre=
-ExecStart=/home/steam/csgo/srcds_run srcds -game csgo -console -usercon +game_type 1 +game_mode 2 +mapgroup mg_allclassic +map de_dust
- +sv_setsteamaccount '<x>'
+ExecStart=srcds_run srcds -game csgo -console -usercon +game_type 1 +game_mode 2 +mapgroup mg_allclassic +map de_dust
+ +sv_setsteamaccount <x> -tickrate 128
 #RemainAfterExit=True
 
 [Install]
