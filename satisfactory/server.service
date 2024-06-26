@@ -5,24 +5,16 @@ After=syslog.target network.target nss-lookup.target network-online.target
 
 [Service]
 Nice=-10
-#Type=forking
 User=steam
 Group=steam
 NoNewPrivileges=true
-# KillMode=none
-# SuccessExitStatus=0 1
-# ProtectHome=true
-# ProtectSystem=full
-# PrivateDevices=true
 StandardOutput=journal
 StandardOutput=append:/var/log/satisfactory.log
-StandardError=append:/var/log/satisfactory.err
-# Restart=always
+StandardError=append:/var/log/satisfactory.error
 Environment="LD_LIBRARY_PATH=./linux64"
-#WorkingDirectory=/home/steam/Steam/steamapps/common/SatisfactoryDedicatedServer
-#ExecStartPre=steamcmd +login 'anonymous' +app_update '1690800' 'validate' +quit
-ExecStart=FactoryServer.sh
-#RemainAfterExit=True
+# WorkingDirectory=/home/steam/Steam/steamapps/common/SatisfactoryDedicatedServer
+WorkingDirectory=/home/steam/SatisfactoryDedicatedServer
+ExecStart=/bin/bash FactoryServer.sh -multihome=::
 
 [Install]
 WantedBy=multi-user.target
