@@ -14,6 +14,6 @@ EOF
 
 sudo cp csgo/server.service /etc/systemd/system/csgo.server.service && \
 echo 'Remember to replace <x> inside "/etc/systemd/system/csgo.server.service" with a steam-gameserver-id' && \
-sudo nano /etc/systemd/system/csgo.server.service && \
+sudo vi /etc/systemd/system/csgo.server.service && \
 sudo systemctl daemon-reload
 

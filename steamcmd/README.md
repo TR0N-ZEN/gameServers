@@ -7,7 +7,7 @@ sources:
 ---
 
 `steamcmd` is an interactive tool  
-<!-- as root edit the sudoers file `nano /etc/sudoers`   -->
+<!-- as root edit the sudoers file `visudo /etc/sudoers` -->
 
 To install it execute install.sh.
 
