@@ -5,23 +5,40 @@ After=syslog.target network.target nss-lookup.target network-online.target
 
 [Service]
 Nice=-5
-#Type=oneshot
+Type=exec
 User=steam
 Group=steam
-NoNewPrivileges=true
-# KillMode=none
-# SuccessExitStatus=0 1
-# ProtectHome=true
-# ProtectSystem=full
-# PrivateDevices=true
+# ProtectSystem=strict                 # untested
+# ReadWritePaths=/home/steam/Steam     # untested
+# PrivateDevices=                      # untested
+# ProtectKernelTunables=               # untested
+# ProtectControlGroups=                # untested
+ProtectProc=invisible                  # works with value "invisible"
+# ProcSubset=pid                       # does not work with value "pid"
+NoNewPrivileges=true                   # works with value "true"
+# ProtectHome=tmpfs                    # untested
+# BindPaths=/home/steam/Steam/         # untested
+# ProtectSystem=full                   # untested
+# PrivateDevices=true                  # untested
 StandardOutput=journal
-StandardOutput=append:/var/log/garrysmod.log
-StandardError=append:/var/log/garrysmod.err
 Restart=no
 Environment="LD_LIBRARY_PATH=/home/steam/Steam/steamapps/common/GarrysModDS/linux64"
 WorkingDirectory=/home/steam/Steam/steamapps/common/GarrysModDS
-ExecStart=/home/steam/Steam/steamapps/common/GarrysModDS/srcds_run -console -game 'garrysmod' +gamemode 'terrortown' +sv_setsteamaccount '<x>' +host_workshop_collection '1526838171' +maxplayers '12' +map 'ttt_metropolis' -tickrate 128
+# ExecStartPre= steamcmd \                 #
+#                 +login 'anonymous' \     #
+#                 +app_update '4020' \     #    does not work
+#                 'validate' \             #
+#                 +quit                    #
+ExecStart=/home/steam/Steam/steamapps/common/GarrysModDS/srcds_run \
+            -console \
+            -game 'garrysmod' \
+            -tickrate 128 \
+            +gamemode 'terrortown' \
+            +sv_setsteamaccount 'TODO_REPLACEME' \
+            +host_workshop_collection '1526838171' \
+            +hide_server 1 \
+            +maxplayers '12' \
+            +map 'ttt_metropolis'
 
 [Install]
 WantedBy=multi-user.target
-

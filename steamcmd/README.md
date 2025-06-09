@@ -20,7 +20,7 @@ steamcmd +login 'anonymous' +app_update '<app-id>' 'validate' +quit
 | `<app-id>` | game                          |
 |------------|-------------------------------|
 | 1690800    | satisfactory dedicated server |
-| 4020       | GarrysMod dedicated server    |
+| 4000       | GarrysMod dedicated server    |
 | -          | -                             |
 | -          | -                             |
 | -          | -                             |
