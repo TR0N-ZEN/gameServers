@@ -1,7 +1,5 @@
 #!/bin/bash
 
-USER=`whoami`
-
 sudo systemctl stop satisfactory.server.service
 
 sudo touch /var/log/satisfactory.{log,error} && \
@@ -29,7 +27,7 @@ sudo systemctl status satisfactory.server.service
 
 cat <<'EOF'
 to inspect logs use the following commands:
-  sudo tail -f /var/log/satisfactory.log
-  sudo tail -f /var/log/satisfactory.error
+  tail -f /var/log/satisfactory.log
+  tail -f /var/log/satisfactory.error
   sudo journalctl -u satisfactory.server.service
 EOF
