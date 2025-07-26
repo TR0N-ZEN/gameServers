@@ -14,7 +14,11 @@ StandardError=append:/var/log/satisfactory.error
 Environment="LD_LIBRARY_PATH=./linux64"
 # ExecStartPre=/usr/games/steamcmd +force_install_dir /home/steam/SatisfactoryDedicatedServer +login anonymous +app_update 1690800 validate +quit
 WorkingDirectory=/home/steam
-ExecStart=/home/steam/SatisfactoryDedicatedServer/FactoryServer.sh -ServerQueryPort=15777 -BeaconPort=15000 -Port=7777 -log -unattended -multihome=::
+ExecStart=/home/steam/SatisfactoryDedicatedServer/FactoryServer.sh \
+            -Port=7777 \
+            -log \
+            -unattended \
+            -multihome=::
 
 [Install]
 WantedBy=multi-user.target
