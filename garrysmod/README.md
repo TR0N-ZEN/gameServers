@@ -1,9 +1,14 @@
+## sources
+
 + https://wiki.facepunch.com/gmod/Downloading_a_Dedicated_Server#linux
 + https://wiki.facepunch.com/gmod/Downloading_a_Dedicated_Server#afterinitialinstallation
 + https://old.e-smog.org/garrys-mod-ttt-dedicated-server-erstellenpart-2/
 + https://www.troubleinterroristtown.com/config/settings/
 + https://developer.valvesoftware.com/wiki/List_of_Garry%27s_Mod_console_commands_and_variables
----
++ https://developer.valvesoftware.com/wiki/Developer_console
+
+
+##  howto
 
 + install game server: `steamcmd +login 'anonymous' +app_update '4020' 'validate' +quit`
 + start game server:
@@ -21,18 +26,14 @@
 
 
 
----
-
 ## encountered errors
 
 + if server doesn't start because `libstdc++.so.6` cannot be found install some packages by entering  
   `sudo apt-get install libc6-i386 lib32stdc++6 lib32gcc1 libncurses5 lib32z1`
 
 
----
 
 ## containerized
-
 
 ### by me (not working yet)
 
